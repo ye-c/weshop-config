@@ -1,0 +1,14 @@
+server:
+  port: 8000
+
+eureka:
+  instance:                         #定义Eureka实例
+    hostname: 127.0.0.1
+  client:
+    register-with-eureka: false     #表示是否将自己注册到Eureka Server上，默认为true
+    fetch-registry: false           #表示是否从Eureka Server上获取注册信息，默认为true
+    service-url:                     #服务注册中心的配置内容，指定服务注册中心的位置
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 10000
