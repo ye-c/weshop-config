@@ -1,1 +1,0 @@
-eureka-config.yml
