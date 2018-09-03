@@ -1,24 +1,11 @@
-server:
-  port: 8081
-  servlet:
-    context-path: /weshop
-
-management:
-  server:
-    servlet:
-      context-path: ${server.servlet.context-path}
-
 eureka:
   instance:
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 20
     instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
   client:
+    register-with-eureka: true
     healthcheck:
       enabled: true
     service-url:
       defaultZone: http://127.0.0.1:8000/eureka/
-
-#spring:
-#  application:
-#    name: service-user-manager
